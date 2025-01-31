@@ -45,7 +45,7 @@ The important things to set
 - SUSHY_EMULATOR_AUTH_FILE = /sushy-conf/htpasswd #If auth is required create a htpasswd file
   e.g 
   ```bash
-  htpasswd -nbB emulator emulator > /data/test-sushy/htpasswd
+  htpasswd -nbB emulator emulator > /home/user/conf/htpasswd
   ```
 - SUSHY_EMULATOR_ALLOWED_INSTANCES = ['uuid_1','uuid_2'] #If you need to filter out the list of KVM domains this emulator will have access to.
   e.g To get Domain UUID's
@@ -57,7 +57,7 @@ The important things to set
     
 - Create Emulator Container and Pass in SSH_KEY, Certs and Configuration
 ssh_key="/home/user/.ssh/my_key"
-conf_folder="/home/user/myfolder"
+conf_folder="/home/user/conf"
 cert_folder="/home/user/mycerts"
 
 podman run -d --replace \
