@@ -64,13 +64,13 @@ podman run -d --replace \
 --name emulator \
 --userns=keep-id \
 -v ${ssh_key}:/sushy-tools/.ssh/id_rsa:z \
+-v ${cert_folder}:/sushy-certs:z \
 -v ${conf_folder}:/sushy-conf:Z \
--v ${cert_folder}:/sushy-certs:Z \
 -e SUSHY_EMULATOR_CONFIG="/sushy-conf/sushy-emulator.conf" \
 -e SERVER_CERT="/sushy-certs/server.crt" \
 -e SERVER_KEY="/sushy-certs/server.key" \
 -e GUNICORN_HOST="0.0.0.0" \
--e GUNICORN_WORKER="1" \
+-e GUNICORN_WORKER="3" \
 -e GUNICORN_PORT=8002 \
 -p 8002:8002 sushy-image:latest
 
